@@ -56,4 +56,3 @@ std::vector<Auto*> AutoInMemory::get_autos()
 {
 	return this->autos;
 }
-

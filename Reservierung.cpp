@@ -2,7 +2,7 @@
 
 Reservierung::Reservierung(Kunde kunde, Auto Auto, int tage)
 {
-	this->autos = Auto;
+	this->auto1 = Auto;
 	this->kunde = kunde;
 	this->tage = tage;
 }

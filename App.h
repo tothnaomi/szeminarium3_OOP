@@ -7,4 +7,8 @@ private:
 	AutoController* cont;
 public:
 	ui();
+
+	void printMenu();
+
+	void run();
 };

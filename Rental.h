@@ -5,11 +5,14 @@
 #include "PKW.h"
 #include "Rental.h"
 #include <vector>
+#include "Reservierung.h"
 
 class Rental 
 {
-	std::vector<Auto> autos;
-	std::vector<Kunde> clients;
+	// nu avem nevoie de bucata asta de cod, pentru ca trebuie sa facem refactorizarea 
+	//std::vector<Auto> autos;
+	//std::vector<Kunde> clients;
+	std::vector <Reservierung> reservierungen;
 
 public:
 

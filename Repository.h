@@ -40,5 +40,5 @@ public:
 
 	std::vector<Auto*> get_autos();
 
-	~AutoInMemory();
+	//~AutoInMemory();
 };

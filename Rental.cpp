@@ -3,6 +3,7 @@
 
 void Rental::add_client(Kunde k)
 {
+	// TODO
 	bool in_vector = false;
 	for (int i=0;i<this->clients.size();i++)
 	{
@@ -17,6 +18,7 @@ void Rental::add_client(Kunde k)
 
 void Rental::delete_client(Kunde k)
 {
+	// TODO
 	for (int i = 0; i < this->clients.size(); i++)
 	{
 		if (k.get_id() == this->clients[i].get_id())
@@ -29,6 +31,7 @@ void Rental::delete_client(Kunde k)
 
 void Rental::update_client(Kunde& k, std::string name)
 {
+	// TODO 
 	for (int i = 0; i < this->clients.size(); i++)
 	{
 		if (k.get_id() == this->clients[i].get_id())
@@ -42,6 +45,7 @@ void Rental::update_client(Kunde& k, std::string name)
 
 void Rental::add_auto(Auto a)
 {
+	// TODO 
 	bool in_vector = false;
 	for (int i = 0; i < this->autos.size(); i++)
 	{
@@ -56,6 +60,7 @@ void Rental::add_auto(Auto a)
 
 void Rental::delete_auto(Auto a)
 {
+	// TODO
 	bool found = false;
 	for (int i = 0; i < this->autos.size(); i++)
 	{

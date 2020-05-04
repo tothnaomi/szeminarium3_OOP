@@ -7,7 +7,7 @@ using namespace std;
 class Reservierung
 {
 private:
-	Auto autos;
+	Auto auto1;
 	Kunde kunde;
 	int tage;
 public:

@@ -9,6 +9,8 @@ class Kunde
 public:
 	Kunde(int, std::string);
 
+	Kunde() = default;
+
 	int get_id();
 
 	std::string get_name();
