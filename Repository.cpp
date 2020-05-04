@@ -52,3 +52,8 @@ Auto* AutoInMemory::update(Auto* aut)
 	save(aut);
 }
 
+std::vector<Auto*> AutoInMemory::get_autos()
+{
+	return this->autos;
+}
+

@@ -38,5 +38,7 @@ public:
 
 	Auto* update(Auto* aut);
 
+	std::vector<Auto*> get_autos();
+
 	~AutoInMemory();
 };

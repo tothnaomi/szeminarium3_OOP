@@ -33,6 +33,15 @@
     <ClInclude Include="Repository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="COntroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reservierung.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LKW.cpp">
@@ -54,6 +63,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COntroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reservierung.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
