@@ -1,75 +1,46 @@
 #include "Rental.h"
 
-
-void Rental::add_client(Kunde k)
+void Rental::deleteReservation(Kunde k, Auto a)
 {
 	// TODO
-	bool in_vector = false;
-	for (int i=0;i<this->clients.size();i++)
+	if (this->searchReservierung(k, a) == false)
 	{
-		if (k.get_id() == this->clients[i].get_id())
-		{
-			in_vector = true;
-			break;
-		}
+		exception theAutoAndThePersonDoesNotExist;
+		throw theAutoAndThePersonDoesNotExist;
 	}
-	if (in_vector ==false) this->clients.push_back(k);
-}
-
-void Rental::delete_client(Kunde k)
-{
-	// TODO
-	for (int i = 0; i < this->clients.size(); i++)
+	else
 	{
-		if (k.get_id() == this->clients[i].get_id())
+		bool found = false;
+		for (int i = 0; i < this->reservierungen.size(); i++)
 		{
-			this->clients.erase(this->clients.begin() + i);
-			break;
+			if (this->reservierungen[i].getAuto().get_id() == a.get_id() && this->reservierungen[i].getKunde().get_id() == k.get_id())
+			{
+				this->reservierungen.erase(this->reservierungen.begin() + i);
+				found == true;
+			}
+			if (found == true)
+				break;
 		}
 	}
 }
 
-void Rental::update_client(Kunde& k, std::string name)
+void Rental::addReservation(Kunde k, Auto a, int tag)
 {
-	// TODO 
-	for (int i = 0; i < this->clients.size(); i++)
+	if (this->searchReservierung(k, a) == true)
+		return;
+	else
 	{
-		if (k.get_id() == this->clients[i].get_id())
-		{
-			clients[i].set_name(name);
-			k.set_name(name);
-			break;
-		}
+		Reservierung newRes = Reservierung(k, a, tag);
+		this->reservierungen.push_back(newRes);
 	}
 }
 
-void Rental::add_auto(Auto a)
+bool Rental::searchReservierung(Kunde k, Auto a)
 {
-	// TODO 
-	bool in_vector = false;
-	for (int i = 0; i < this->autos.size(); i++)
+	for (int i = 0; i < this->reservierungen.size(); i++)
 	{
-		if (a.get_id() == this->autos[i].get_id())
-		{
-			in_vector = true;
-			break;
-		}
+		if (this->reservierungen[i].getAuto() == a && this->reservierungen[i].getKunde() == k)
+			return true;
 	}
-	if (in_vector == false) this->autos.push_back(a);
-}
-
-void Rental::delete_auto(Auto a)
-{
-	// TODO
-	bool found = false;
-	for (int i = 0; i < this->autos.size(); i++)
-	{
-		if (a.get_id() == this->autos[i].get_id())
-		{
-			this->autos.erase(this->autos.begin()+i);
-			found = true;
-		}
-		if (found)
-			break;
-	}
+	return false;
 }

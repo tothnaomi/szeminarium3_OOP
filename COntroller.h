@@ -6,6 +6,7 @@
 class AutoController
 {
 private:
+	// am facut un constructor privat, ca sa avem doar o instanta a clasei respective !!!
 	AutoController();
 	static AutoController *instanta; // global variable 
 public:
@@ -17,9 +18,9 @@ public:
 	Auto* findAutoId(int id);
 	std::vector<Auto> findAll();
 
-	Kunde saveAuto(Auto a); 
+	Auto* saveAuto(Auto a); 
 
-	Kunde updateAuto(Auto a); 
+	Auto* updateAuto(Auto a); 
 
-	Kunde deleteAuto(int id);
+	Auto* deleteAuto(int id);
 };

@@ -25,3 +25,10 @@ void Kunde::set_name(std::string name)
 {
 	this->name = name;
 }
+
+bool Kunde::operator==(Kunde other)
+{
+	if (this->id == other.id && this->name == other.name)
+		return true;
+	return false;
+}

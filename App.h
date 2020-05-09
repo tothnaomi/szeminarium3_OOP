@@ -1,14 +1,18 @@
 #pragma once
+#include "ui.h"
+#include <iostream>
 #include "COntroller.h"
 
-class ui
+int main()
 {
-private:
-	AutoController* cont;
-public:
-	ui();
+	ui menu = ui();
+	while (true)
+	{
+		int option;
+		menu.printMenu();
+		std::cin >> option;
 
-	void printMenu();
+	}
 
-	void run();
-};
+	return 0;
+}

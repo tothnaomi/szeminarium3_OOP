@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
+    <ClInclude Include="ui.h" />
     <ClInclude Include="Auto.h" />
     <ClInclude Include="COntroller.h" />
     <ClInclude Include="Kunde.h" />
@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="ui.cpp" />
     <ClCompile Include="Auto.cpp" />
     <ClCompile Include="COntroller.cpp" />
     <ClCompile Include="Kunde.cpp" />

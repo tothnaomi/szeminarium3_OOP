@@ -18,4 +18,6 @@ public:
 	void set_id(int);
 
 	void set_name(std::string name);
+
+	bool operator==(Kunde other);
 };

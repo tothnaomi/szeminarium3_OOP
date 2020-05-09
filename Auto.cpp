@@ -29,3 +29,9 @@ void Auto::set_modell(std::string modell)
 {
 	this->modell = modell;
 }
+
+bool Auto::operator==(Auto other)
+{
+	if (this->id == other.id) return true;
+	return false;
+}

@@ -22,4 +22,6 @@ public:
 	void set_marke(std::string marke);
 
 	void set_modell(std::string modell);
+
+	bool operator==(Auto other);
 };

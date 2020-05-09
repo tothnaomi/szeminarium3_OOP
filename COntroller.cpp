@@ -23,9 +23,9 @@ void AutoController::sortAutos()
 		sorted = true;
 		for (int i = 1; i < this->repo.get_autos().size(); i++)
 		{
-			if (this->repo.get_autos[i - 1] > this->repo.get_autos[i])
+			if (this->repo.get_autos()[i - 1] > this->repo.get_autos()[i])
 			{
-				std::swap(this->repo.get_autos[i - 1], this->repo.get_autos[i]);
+				std::swap(this->repo.get_autos()[i - 1], this->repo.get_autos()[i]);
 				sorted = false;
 			}
 		}
@@ -52,20 +52,32 @@ std::vector<Auto> AutoController::findAll()
 	return alleAutos;
 }
 
-Kunde AutoController::saveAuto(Auto a)
+Auto* AutoController::saveAuto(Auto a)
 {
-	// TODO
-	return Kunde();
+	if (this->repo.findOne(a.get_id()) == nullptr)
+		return nullptr;
+	else
+	{
+		this->repo.save(&a);
+	}
 }
 
-Kunde AutoController::updateAuto(Auto a)
+Auto* AutoController::updateAuto(Auto a)
 {
-	// TODO
-	return Kunde();
+	if (this->repo.findOne(a.get_id()) == nullptr)
+	{
+		return nullptr;
+	}
+	else
+	{
+		this->repo.update(&a);
+	}
 }
 
-Kunde AutoController::deleteAuto(int id)
+Auto* AutoController::deleteAuto(int id)
 {
-	// TODO
-	return Kunde();
+	if (this->repo.findOne(id) == nullptr)
+		return nullptr;
+	else
+		this->repo.del(id);
 }

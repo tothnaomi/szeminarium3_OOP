@@ -12,4 +12,12 @@ private:
 	int tage;
 public:
 	Reservierung(Kunde, Auto, int);
+
+	Auto getAuto() const;
+	Kunde getKunde() const;
+	int getTage() const;
+
+	void setAuto(Auto auto2);
+	void setKunde(Kunde kunde2);
+	void setTage(int tag);
 };

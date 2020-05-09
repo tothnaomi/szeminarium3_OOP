@@ -16,13 +16,13 @@ class Rental
 
 public:
 
-	void add_client(Kunde k);
+	//void update_client(Kunde& k, std::string name); // ahol ki kell cserelje oda kell &
 
-	void delete_client(Kunde k);
+	//void update_auto(Auto updateAuto);
 
-	void update_client(Kunde& k, std::string name); // ahol ki kell cserelje oda kell &
+	void deleteReservation(Kunde k, Auto a);
 
-	void add_auto(Auto a);
+	void addReservation(Kunde k, Auto a, int);
 
-	void delete_auto(Auto a);
+	bool searchReservierung(Kunde k, Auto a);
 };
