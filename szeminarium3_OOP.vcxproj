@@ -138,6 +138,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="sorter.h" />
+    <ClInclude Include="Statistics.h" />
     <ClInclude Include="ui.h" />
     <ClInclude Include="Auto.h" />
     <ClInclude Include="COntroller.h" />
@@ -147,9 +149,12 @@
     <ClInclude Include="Rental.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Reservierung.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="sorter.cpp" />
+    <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="ui.cpp" />
     <ClCompile Include="Auto.cpp" />
     <ClCompile Include="COntroller.cpp" />

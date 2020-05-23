@@ -1,4 +1,5 @@
 #include "COntroller.h"
+#include "utils.h"
 
 AutoController* AutoController::instanta = nullptr;
 
@@ -14,22 +15,15 @@ AutoController* AutoController::get_instanta()
 	return instanta;
 }
 
+void AutoController::setSorter(Sorter* newSorter)
+{
+	this->MySorter = newSorter;
+}
+
 void AutoController::sortAutos()
 {
-	// Bubble Sort
-	bool sorted = false;
-	while (not sorted)
-	{
-		sorted = true;
-		for (int i = 1; i < this->repo.get_autos().size(); i++)
-		{
-			if (this->repo.get_autos()[i - 1] > this->repo.get_autos()[i])
-			{
-				std::swap(this->repo.get_autos()[i - 1], this->repo.get_autos()[i]);
-				sorted = false;
-			}
-		}
-	}
+	vector<Auto*> myVector = this->repo.get_autos();
+	this->MySorter->sort(myVector);
 }
 
 Auto* AutoController::findAutoId(int id)

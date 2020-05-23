@@ -1,5 +1,23 @@
 #include "Rental.h"
 
+void Rental::returnAuto(Kunde kunde, Auto myAuto)
+{
+	for (int i = 0; i < this->reservierungen.size(); i++)
+	{
+		if (this->reservierungen[i].getKunde() == kunde && this->reservierungen[i].getAuto() == myAuto)
+			this->reservierungen[i].setInfo(2);
+	}
+}
+
+void Rental::extendReservation(Kunde kunde, Auto myAuto)
+{
+	for (int i = 0; i < this->reservierungen.size(); i++)
+	{
+		if (this->reservierungen[i].getKunde() == kunde && this->reservierungen[i].getAuto() == myAuto)
+			this->reservierungen[i].setInfo(1);
+	}
+}
+
 void Rental::deleteReservation(Kunde k, Auto a)
 {
 	// TODO
@@ -16,7 +34,7 @@ void Rental::deleteReservation(Kunde k, Auto a)
 			if (this->reservierungen[i].getAuto().get_id() == a.get_id() && this->reservierungen[i].getKunde().get_id() == k.get_id())
 			{
 				this->reservierungen.erase(this->reservierungen.begin() + i);
-				found == true;
+				found = true;
 			}
 			if (found == true)
 				break;
@@ -43,4 +61,9 @@ bool Rental::searchReservierung(Kunde k, Auto a)
 			return true;
 	}
 	return false;
+}
+
+std::vector<Reservierung> Rental::getList()
+{
+	return this->reservierungen;
 }

@@ -20,9 +20,15 @@ public:
 
 	//void update_auto(Auto updateAuto);
 
+	void returnAuto(Kunde kunde, Auto myAuto);
+
+	void extendReservation(Kunde kunde, Auto myAuto);
+
 	void deleteReservation(Kunde k, Auto a);
 
 	void addReservation(Kunde k, Auto a, int);
 
 	bool searchReservierung(Kunde k, Auto a);
+
+	std::vector <Reservierung> getList();
 };

@@ -10,6 +10,7 @@ private:
 	Auto auto1;
 	Kunde kunde;
 	int tage;
+	int info;
 public:
 	Reservierung(Kunde, Auto, int);
 
@@ -20,4 +21,5 @@ public:
 	void setAuto(Auto auto2);
 	void setKunde(Kunde kunde2);
 	void setTage(int tag);
+	void setInfo(int newinfo);
 };
